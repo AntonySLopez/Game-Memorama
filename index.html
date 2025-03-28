@@ -11,99 +11,22 @@
         <h1 class="text-[2.3vw] mt-0">
             MEMORAMA
         </h1>
-        <button class="flex w-[80%] justify-center items-center rounded-xl mx-[10%] bg-[#d0ecfc] cursor-pointer hover:scale-[1.1]">
+        <button onclick="starGame()" class="flex w-[80%] justify-center items-center rounded-xl mx-[10%] bg-[#d0ecfc] cursor-pointer hover:scale-[1.1]">
             <img src="src/img/icons8-home.svg" alt="home" class="w-[50px] ">
             <h2 class="text-[1.2vw]">NEW GAME</h2>
         </button>
         <H3 class="grid text-center place-items-center text-[1.8rem] pt-4">
-            Madara Uchija
+            Nombre de usuario
         </H3 >
         <div class="w-full h-[60%]">
-            <img class="rounded-2xl shadow-md" src="src/img/perfil-Madara.webp" alt="Avatar" class="w-full overflow-auto">
+            <img id="avatar" class="rounded-2xl shadow-md" src="src/img/perfil-Madara.webp" alt="Avatar" class="w-full overflow-auto">
         </div>
     </header>
     <main class="w-[99%] h-[94vh] my-[3vh] grid place-items-center bg-white rounded-2xl shadow-md shadow-[#e9e9e9]">
-    
-        <section id="game" class="w-full h-full grid p-[3vh] gap-3">
-            <!--
-            <img onclick="addcart(this)" src="src/img/categorias/Arbol/tree1.png"  alt="Arboles" data-valor="1" class="w-[150px] h-[200px]  shadow-md shadow-[#e9e9e9] border-[#bfe5fb] border-[1px] rounded-2xl hover:scale-[1.03] hover:shadow-black hover:shadow-1xl">
-            <img onclick="addcart(this)" src="src/img/categorias/Arbol/tree2.png"  alt="Arboles" data-valor="2" class="w-[150px] h-[200px]  shadow-md shadow-[#e9e9e9] border-[#bfe5fb] border-[1px] rounded-2xl hover:scale-[1.03] hover:shadow-black hover:shadow-1xl">
-            <img onclick="addcart(this)" src="src/img/categorias/Arbol/tree3.png"  alt="Arboles" data-valor="3" class="w-[150px] h-[200px]  shadow-md shadow-[#e9e9e9] border-[#bfe5fb] border-[1px] rounded-2xl hover:scale-[1.03] hover:shadow-black hover:shadow-1xl">
-            <img onclick="addcart(this)" src="src/img/categorias/Arbol/tree4.png"  alt="Arboles" data-valor="4" class="w-[150px] h-[200px]  shadow-md shadow-[#e9e9e9] border-[#bfe5fb] border-[1px] rounded-2xl hover:scale-[1.03] hover:shadow-black hover:shadow-1xl">
-            -->
+        <section id="game" class="w-full h-full grid grid-cols-auto-fit md:grid-cols-6 lg:grid-cols-8 p-[3vh] gap-3">
+            
         </section>
-
-<!--MODAL SALIR-->
-        <section id="modalSalir" class="w-[100%] h-[94vh] hidden border border-white bg-[#7fa3b857]  grid rounded-2xl place-items-center">
-            <div class="w-[50%] h-[30%] bg-[#2986b8] rounded-[20px] shadow-[#bfe5fb] grid place-items-center text-[4rem] relative">
-                    SALIR DEL JUEGO
-                <div id="btn-cerrar" class="absolute flex justify-around w-[100%] h-[10vh] bottom-[-6vh] ">
-                    <button class="text-black text-[1rem] w-[8vh] h-[8vh] bg-green-400 cursor-pointer hover:scale-[1.1] rounded-[100%] grid place-items-center">
-                        <svg class="size-16" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                        </svg>
-                    </button>
-                    <button  id="btn-continuar" onclick="regresarJuego()" class=" text-black text-[1rem] w-[8vh] h-[8vh] bg-red-500 cursor-pointer hover:scale-[1.1] rounded-[100%] grid place-items-center">
-                        <svg class="size-16" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                        </svg>       
-                    </button>
-                </div>
-            </div>
-        </section>
-<!--Modal GAME OVER-->        
-        <section id="modaL-GameOver" class="w-full h-[94vh] hidden border border-white bg-[#7fa3b857] grid rounded-2xl place-items-center">
-            <div class="w-[50%] h-[55vh] rounded-[15px] grid place-items-center p-3 bg-[#2986b8] text-white">
-                <div class="sombra-texto-bg font-bold flex justify-between text-[6vw] shadow-[0px_4px_0px-red]">
-                    GAME OVER
-                </div>
-                    <!--id agregado para cambiar puntos totales-->
-                <div class="sombra-texto-sm pt-[3px] border-t w-64 flex justify-between px-2">
-                    <span class="leading-[2vh]">TOTAL<br>PUNTOS</span>
-                    <span id="total-puntos" class="text-[3vh]">
-                        0.000
-                    </span>
-                </div>
-
-                    <!--id agregado para cambiar aciertos-->
-                <button id="retry" class="flex justify-center place-items-center rounded-[35px] w-[30%] 
-                                bg-yellow-400 px-4 py-1 text-black cursor-pointer">
-                            <img class="mx-[1vh] " src="#" width="25px" alt="">
-                            Reintentar
-                </button>
-                <a href="#" class="flex place-items-center gap-[1vh]">
-                    Compartir 
-                    <img src="#" width="30px" alt="fb">
-                </a>
-                <div class="border place-items-center rounded-md w-[60%] h-[4vh] flex justify-between px-2">
-                    PUNTOS
-
-                    <!--id agregado para cambiar puntos-->
-                    <SPAN id="points">
-                        0
-                    </SPAN>
-                </div>
-                <div class="border-b w-[60%] h flex justify-between px-2">
-                    TIEMPO
-
-                    <!--id agregado para cambiar tiempo-->
-                    <span id="time">
-                        00:00:06
-                    </span>
-                </div>
-                <div class="border-b w-[60%] h flex justify-between px-2">
-                    ACIERTOS 
-                    
-                    <!--id agregado para cambiar aciertos-->
-                    <span id="acerts">
-                        0/12
-                    </span>
-                </div>
-                <button id="TablaDeEstadisticas" onclick="mostrarQuitarModal(modalEstadisticas)" class="rounded-[20px] w-[50%] bg-[#3faae4] border-green-400 px-4 py-1 cursor-pointer">
-                    - Tabla de puntuaciones
-                </button>
-            </div>
-        </section>
+        
     </main>
     <!--Apartado que contiene audio, musica, puntos y tiempo-->
     <aside class="w-[80%] col-start-1 row-start-2 grid bg-white m-8 rounded-2xl shadow-md shadow-[#e9e9e9] p-[5%]" >
@@ -124,6 +47,98 @@
             </span>
         </dvi>
     </aside>
+
+    <!--MODAL SALIR-->
+    <section id="modalSalir" class="w-full h-screen fixed z-30 hidden border border-white bg-[#7fa3b857]  grid rounded-2xl place-items-center">
+        <div class="w-[50%] h-[30%] bg-[#2986b8] rounded-[20px] shadow-[#bfe5fb] grid place-items-center text-[4rem] relative">
+                SALIR DEL JUEGO
+            <div id="btn-cerrar" class="absolute flex justify-around w-[100%] h-[10vh] bottom-[-6vh] ">
+                <button class="text-black text-[1rem] w-[8vh] h-[8vh] bg-green-400 cursor-pointer hover:scale-[1.1] rounded-[100%] grid place-items-center">
+                    <svg class="size-16" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
+                </button>
+                <button  id="btn-continuar" onclick="regresarJuego()" class=" text-black text-[1rem] w-[8vh] h-[8vh] bg-red-500 cursor-pointer hover:scale-[1.1] rounded-[100%] grid place-items-center">
+                    <svg class="size-16" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                    </svg>       
+                </button>
+            </div>
+        </div>
+    </section>
+<!--Modal GAME OVER-->        
+    <section id="modaL-GameOver" class="w-full h-screen fixed z-30 hidden border border-white bg-[#7fa3b857] grid rounded-2xl place-items-center">
+        <div class="w-[50%] h-[55vh] rounded-[15px] grid place-items-center p-3 bg-[#2986b8] text-white">
+            <div class="sombra-texto-bg font-bold flex justify-between text-[6vw] shadow-[0px_4px_0px-red]">
+                GAME OVER
+            </div>
+                <!--id agregado para cambiar puntos totales-->
+            <div class="sombra-texto-sm pt-[3px] border-t w-64 flex justify-between px-2">
+                <span class="leading-[2vh]">TOTAL<br>PUNTOS</span>
+                <span id="total-puntos" class="text-[3vh]">
+                    0.000
+                </span>
+            </div>
+
+                <!--id agregado para cambiar aciertos-->
+            <button id="retry" class="flex justify-center place-items-center rounded-[35px] w-[30%] 
+                            bg-yellow-400 px-4 py-1 text-black cursor-pointer">
+                        <img class="mx-[1vh] " src="#" width="25px" alt="">
+                        Reintentar
+            </button>
+            <a href="#" class="flex place-items-center gap-[1vh]">
+                Compartir 
+                <img src="#" width="30px" alt="fb">
+            </a>
+            <div class="border place-items-center rounded-md w-[60%] h-[4vh] flex justify-between px-2">
+                PUNTOS
+
+                <!--id agregado para cambiar puntos-->
+                <SPAN id="points">
+                    0
+                </SPAN>
+            </div>
+            <div class="border-b w-[60%] h flex justify-between px-2">
+                TIEMPO
+
+                <!--id agregado para cambiar tiempo-->
+                <span id="time">
+                    00:00:06
+                </span>
+            </div>
+            <div class="border-b w-[60%] h flex justify-between px-2">
+                ACIERTOS 
+                
+                <!--id agregado para cambiar aciertos-->
+                <span id="acerts">
+                    0/12
+                </span>
+            </div>
+        </div>
+    </section>
+<!--Modal Inicio-->
+<section id="modaL-Inicio" class="w-full h-screen fixed z-30  border border-white bg-[#163547] grid rounded-2xl place-items-center">
+    <div class="w-[50%] h-[55vh]  rounded-[15px] grid place-items-center p-3 bg-[#2986b8] text-white">
+        <div class="sombra-texto-bg font-bold flex text-center text-[4vw] shadow-[0px_4px_0px-red]">
+            MEMORAMA PESADO
+        </div>
+        <!--boton inicio-->
+        <button id="tbn-star" onclick="starEtapa1()" class="w-auto h-auto border text-[5vw] px-[3vh] rounded-2xl bg-[#1377e9] hover:scale-[1.1] cursor-pointer">
+            ACEPTO EL RETO
+        </button>
+        <!--Contenido para elejir avatar y cantidad de cartas-->
+        <section class="grid place-items-center">
+            <h3 id="elejir-avatar" class="text-[2vw] hidden">Seleccione su Persoanje</h3>
+            <div id="avatares" class="my-[1vh] flex justify-between gap-4">
+                
+            </div>
+        </section>
+        <div id="text-star">
+            Esfuerzate y exprime tu capacidad de memoria con este "facil" juego de cartas.
+        </div>
+    </div>
+</section>
+
     <script src="src/js/init.js"></script>
 </body>
 </html>
